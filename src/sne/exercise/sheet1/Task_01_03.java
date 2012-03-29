@@ -1,4 +1,4 @@
-package sne.exercises;
+package sne.exercise.sheet1;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -23,6 +23,38 @@ public class Task_01_03 {
 		String source = "files/TomSawyer.txt";
 
 		// read file
+		StringBuilder sb = readFile(source);
+
+		// process input
+		BigDecimal allChars = new BigDecimal(sb.length());
+		BigDecimal smallChars = new BigDecimal(sb.toString()
+				.replaceAll("[^a-z]", "").length());
+
+		// result = smallChars / allChars * 100
+		BigDecimal result = smallChars
+				.divide(allChars, 5, RoundingMode.HALF_UP).multiply(
+						new BigDecimal(100));
+		System.out.println("Result = " + result.toPlainString() + " %");
+		
+		// String.format("%5.2f%%", double value);
+	}
+	
+	
+	// FIXME [sne]
+	private int[] part2(String text) {
+		int[] chars = null;
+		for (int i = 0; i < text.length(); i++) {
+			for (int j = 97; j <= 122; j++) {
+				if (text.charAt(i) >= 97 && text.charAt(i) <= 122) {
+					chars[i] += 1;
+				}
+			}
+		}
+		return chars;
+	}
+
+	private static StringBuilder readFile(String source) {
+
 		StringBuilder sb = new StringBuilder();
 		Scanner scanner = null;
 		try {
@@ -36,16 +68,6 @@ public class Task_01_03 {
 		} finally {
 			scanner.close();
 		}
-
-		// process input
-		BigDecimal allChars = new BigDecimal(sb.length());
-		BigDecimal smallChars = new BigDecimal(sb.toString()
-				.replaceAll("[^a-z]", "").length());
-
-		// result = smallChars / allChars * 100
-		BigDecimal result = smallChars
-				.divide(allChars, 5, RoundingMode.HALF_UP).multiply(
-						new BigDecimal(100));
-		System.out.println("Result = " + result.toPlainString() + " %");
+		return sb;
 	}
 }

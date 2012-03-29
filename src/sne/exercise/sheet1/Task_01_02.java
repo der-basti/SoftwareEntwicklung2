@@ -1,4 +1,4 @@
-package sne.exercises;
+package sne.exercise.sheet1;
 
 import java.awt.Color;
 

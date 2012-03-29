@@ -1,4 +1,4 @@
-package sne.exercises;
+package sne.exercise;
 
 /**
  * FIXME [sne] Exercise sheet: 0x task: 0x <br />
