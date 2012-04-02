@@ -1,7 +1,7 @@
 package sne.exercise.sheet2;
 
 /**
- * FIXME [sne] Exercise sheet: 02 task: 03 <br />
+ * Exercise sheet: 02 task: 03 <br />
  * Description:<br />
  * Schreiben Sie einen Datentyp „Year“ zur Repräsentation eines Kalenderjahres
  * mit der Funktionalität zu ermitteln, ob das betreffende Jahr ein Schaltjahr
@@ -16,5 +16,20 @@ public class Task_02_03 {
 
 	public static void main(String[] args) {
 
+		Year year = new Year();
+		System.out.println("2011 is leap year: " + year.isLeapyear(2011));
+		System.out.println("current is leap year: " + year.isLeapyear());
+		
+		System.out.println();
+		
+		Date date1 = new Date();
+		Date date2 = new Date(12,24,2011);
+		Date date3 = new Date(12,24,2012);
+		System.out.println("current days: " + date1.getDayOfYear());
+		// FIXME [sne] FAIL
+		System.out.println("FAIL ! 12-24-2011: " + date2.getDayOfYear());
+		System.out.println("FAIL ! 12-24-2012: " + date3.getDayOfYear());
+		System.out.println("current - 12-24-2011: " + date1.getDayDifference(date2));
+		System.out.println("12-24-2011 - 12-24-2012: " + date2.getDayDifference(date3));
 	}
 }

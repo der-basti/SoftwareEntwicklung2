@@ -22,24 +22,20 @@ public class Task_02_02 {
 
 	public static void main(String[] args) {
 
+		int size = 3;
+
 		Random r = new Random();
-		Point3D[] points = new Point3D[3];
-		points[0] = new Point3D(r.nextInt(100), r.nextInt(100), r
-				.nextInt(100));
-		points[1] = new Point3D(r.nextInt(100), r.nextInt(100), r
-				.nextInt(100));
-		points[2] = new Point3D(r.nextInt(100), r.nextInt(100), r
-				.nextInt(100));
-		
-		int count = points.length;
-		for (int i = 0; i<points.length; i++) {
-			if ((count - i) != i) {
-				points[count - i].distanceEuklidisch(points[i]);
-				// TODO [sne] finsihed
-				//points[count - i].distanceEuklidischQuad(points[i]);
-				//points[count - i].distanceManhattanMetrik(points[i]);
-				// TODO [sne] fooo
-				points.toString();
+		Point3D[] points = new Point3D[size];
+
+		int dimension = 100;
+		for (int i = 0; i < size; i++) {
+			points[i] = new Point3D(r.nextInt(dimension), r.nextInt(dimension),
+					r.nextInt(dimension));
+		}
+
+		for (int i = 0; i < size; i++) {
+			if (i != ((size - 1) - i)) {
+				System.out.println(points[(size - 1) - i].toString(points[i]));
 			}
 		}
 	}
