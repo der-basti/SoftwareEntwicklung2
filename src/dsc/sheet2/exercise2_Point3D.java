@@ -39,16 +39,17 @@ public class exercise2_Point3D {
 		
 		StdOut.println("");
 		StdOut.println("Euclidean Distance from Point 1 to Point 2 is " + point[0].euclideanDistance(point[1]));
-		StdOut.println("Euclidean Distance from Point 1 to Point 2 is " + point[0].euclideanDistance(point[2]));
-		StdOut.println("Euclidean Distance from Point 1 to Point 2 is " + point[1].euclideanDistance(point[2]));
+		StdOut.println("Euclidean Distance from Point 1 to Point 3 is " + point[0].euclideanDistance(point[2]));
+		StdOut.println("Euclidean Distance from Point 2 to Point 3 is " + point[1].euclideanDistance(point[2]));
 		StdOut.println("");
 		StdOut.println("Quadratic Euclidean Distance from Point 1 to Point 2 is " + point[0].quadraticEuclideanDistance(point[1]));
-		StdOut.println("Quadratic Euclidean Distance from Point 1 to Point 2 is " + point[0].quadraticEuclideanDistance(point[2]));
-		StdOut.println("Quadratic Euclidean Distance from Point 1 to Point 2 is " + point[1].quadraticEuclideanDistance(point[2]));
+		StdOut.println("Quadratic Euclidean Distance from Point 1 to Point 3 is " + point[0].quadraticEuclideanDistance(point[2]));
+		StdOut.println("Quadratic Euclidean Distance from Point 2 to Point 3 is " + point[1].quadraticEuclideanDistance(point[2]));
 		StdOut.println("");
 		StdOut.println("Taxicab Distance from Point 1 to Point 2 is " + point[0].taxicabDistance(point[1]));
-		StdOut.println("Taxicab Distance from Point 1 to Point 2 is " + point[0].taxicabDistance(point[2]));
-		StdOut.println("Taxicab Distance from Point 1 to Point 2 is " + point[1].taxicabDistance(point[2]));
+		StdOut.println("Taxicab Distance from Point 1 to Point 3 is " + point[0].taxicabDistance(point[2]));
+		StdOut.println("Taxicab Distance from Point 2 to Point 3 is " + point[1].taxicabDistance(point[2]));
+	
 		
 //		for(int i = 0; i < N - 1; i++) {
 //			StdOut.println("Euclidean Distance from Point" + (i + 1) + " to Point" + (i + 2) + " is " + point[i].euclideanDistance(point[i+1]));

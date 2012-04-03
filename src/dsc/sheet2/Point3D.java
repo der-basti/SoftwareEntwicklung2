@@ -4,14 +4,14 @@ public class Point3D {
 	
 	private final int x, y, z;
 	
-	public Point3D(int xCoord, int yCoord, int zCoord) {
-		x = xCoord;
-		y = yCoord;
-		z = zCoord;
+	public Point3D(int x, int y, int z) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 	
 	public double euclideanDistance(Point3D A) {
-		return Math.sqrt((A.x - x) * (A.x - x) + (A.y - y) * (A.y - y) + (A.z - z) * (A.z - z));
+		return Math.sqrt(quadraticEuclideanDistance(A));
 	}
 	
 	public double quadraticEuclideanDistance(Point3D A) {
