@@ -32,15 +32,24 @@ class Date {
 		return this.cal.get(Calendar.DAY_OF_YEAR);
 	}
 
-	// FIXME [sne] day difference
+	/**
+	 * @see #getDayDifference2(Date, Date)
+	 * @param date
+	 * @return difference
+	 */
 	public long getDayDifference(Date date) {
 		GregorianCalendar tmp = createCalendar(date);
 		return Math.abs(this.cal.getTimeInMillis() - tmp.getTimeInMillis())
 				/ (1000 * 60 * 60 * 24) + 1;
-		// ms, s, min, h
+		// ms, s, min, h XXX [sne] --> +1 ???
 	}
 
-	// FIXME [sne] day difference
+	/**
+	 * @see #getDayDifference(Date)
+	 * @param startDate
+	 * @param endDate
+	 * @return difference
+	 */
 	public long getDayDifference2(Date startDate, Date endDate) {
 		Calendar s = createCalendar(startDate);
 		Calendar e = createCalendar(endDate);
@@ -49,10 +58,10 @@ class Date {
 			s.add(Calendar.DAY_OF_MONTH, 1);
 			daysBetween++;
 		}
-		
-		// fooo
+
+		// XXX [sne] --> +1 ???
 		daysBetween++;
-		
+
 		return daysBetween;
 	}
 

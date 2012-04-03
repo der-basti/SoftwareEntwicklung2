@@ -40,17 +40,17 @@ public class Task_01_03 {
 	}
 	
 	
-	// FIXME [sne]
-	private int[] part2(String text) {
-		int[] chars = null;
+	@SuppressWarnings("unused")
+	private int[] variantTwo(String text) {
+		int[] charsCount = new int[26];
 		for (int i = 0; i < text.length(); i++) {
 			for (int j = 97; j <= 122; j++) {
 				if (text.charAt(i) >= 97 && text.charAt(i) <= 122) {
-					chars[i] += 1;
+					charsCount[i] += 1;
 				}
 			}
 		}
-		return chars;
+		return charsCount;
 	}
 
 	private static StringBuilder readFile(String source) {

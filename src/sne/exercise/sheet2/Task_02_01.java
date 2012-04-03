@@ -14,9 +14,6 @@ public class Task_02_01 {
 	
 	public static void main(String[] args) {
 
-		Dice[] d1 = new Dice[4];
-		Dice d2[] = new Dice[4];
-		
 		Dice dice = new Dice();
 		dice.roll();
 		System.out.println(dice.toString());

@@ -1,6 +1,5 @@
 package sne.exercise.sheet2;
 
-import org.junit.Assert;
 
 /**
  * Exercise sheet: 02 task: 03 <br />
