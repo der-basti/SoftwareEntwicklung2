@@ -11,12 +11,16 @@ package sne.exercise.sheet2;
  * ausgibt.
  */
 public class Task_02_01 {
-
+	
 	public static void main(String[] args) {
 
+		Dice[] d1 = new Dice[4];
+		Dice d2[] = new Dice[4];
+		
 		Dice dice = new Dice();
 		dice.roll();
 		System.out.println(dice.toString());
+		
 		dice.roll(30);
 		System.out.println(dice.toString());
 	}

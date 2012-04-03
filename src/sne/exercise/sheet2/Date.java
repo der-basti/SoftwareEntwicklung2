@@ -25,22 +25,40 @@ class Date {
 		if (year < 1582)
 			throw new IllegalArgumentException("Wrong year (as of 1582).");
 
-//		this.cal = new GregorianCalendar(year, month, dayOfMonth);
-		this.cal = new GregorianCalendar();
-		this.cal.set(year, month, dayOfMonth);
+		this.cal = new GregorianCalendar(year, month, dayOfMonth, 23, 59, 59);
 	}
 
 	public int getDayOfYear() {
 		return this.cal.get(Calendar.DAY_OF_YEAR);
 	}
 
+	// FIXME [sne] day difference
 	public long getDayDifference(Date date) {
-		GregorianCalendar tmp = new GregorianCalendar(date.getYear(),
-				date.getMonth(), date.getDayOfMonth());
+		GregorianCalendar tmp = createCalendar(date);
 		return Math.abs(this.cal.getTimeInMillis() - tmp.getTimeInMillis())
-				/ (1000 * 60 * 60 * 24);
+				/ (1000 * 60 * 60 * 24) + 1;
 		// ms, s, min, h
-		// return Math.abs(getDayOfYear() - date.getDayOfYear());
+	}
+
+	// FIXME [sne] day difference
+	public long getDayDifference2(Date startDate, Date endDate) {
+		Calendar s = createCalendar(startDate);
+		Calendar e = createCalendar(endDate);
+		long daysBetween = 0;
+		while (s.before(e)) {
+			s.add(Calendar.DAY_OF_MONTH, 1);
+			daysBetween++;
+		}
+		
+		// fooo
+		daysBetween++;
+		
+		return daysBetween;
+	}
+
+	private GregorianCalendar createCalendar(Date date) {
+		return new GregorianCalendar(date.getYear(), date.getMonth(),
+				date.getDayOfMonth(), 23, 59, 59);
 	}
 
 	public int getMonth() {

@@ -4,11 +4,10 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
- * Only exercise!
+ * Exercise only!
  */
 class Year {
 
-	// Calendar
 	private GregorianCalendar cal;
 
 	public Year() {
