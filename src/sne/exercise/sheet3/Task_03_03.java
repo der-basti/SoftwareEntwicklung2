@@ -1,5 +1,11 @@
 package sne.exercise.sheet3;
 
+import java.awt.Point;
+import java.util.Random;
+
+import StdLib.In;
+import StdLib.StdDraw;
+
 /**
  * Exercise sheet: 03 task: 03 <br />
  * Description:<br />
@@ -20,6 +26,27 @@ public class Task_03_03 {
 
 	public static void main(String[] args) {
 
-		// TODO [sne] implement
+		Random random = new Random();
+		Point start = new Point(random.nextInt(3), random.nextInt(3));
+		System.out.print("How many steps: ");
+		int n = new In().readInt();
+		RandomWalker walker = new RandomWalker(start.x, start.y);
+		
+		StdDraw.setScale(-100, 100);
+		StdDraw.show();		
+
+		System.out.println("Start: x=" + walker.getInitX() + " y="
+				+ walker.getInitY());
+		int oldX, oldY;
+		for (int i = 0; i < n; i++) {
+			oldX = walker.getX();
+			oldY = walker.getY();
+			
+			walker.step();
+			
+			StdDraw.line(oldX, oldY, walker.getX(), walker.getY());
+		}
+		
+		System.out.println("End: x=" + walker.getX() + " y=" + walker.getY());
 	}
 }

@@ -1,5 +1,7 @@
 package sne.exercise.sheet3;
 
+import StdLib.In;
+
 /**
  * Exercise sheet: 03 task: 02 <br />
  * Description:<br />
@@ -17,12 +19,16 @@ public class Task_03_02 {
 
 		MorseCode morseCode = new MorseCode("files/morse.csv");
 
-		// FIXME [sne] TEST IT
+		String text = "hALlo";
+		String encrypt = morseCode.encrypt(text.toUpperCase());
+		System.out.println(text + " -> " + encrypt);
 
-		String encrypt = morseCode.encrypt("hallo".toUpperCase());
-		System.out.println(encrypt);
+		/*text = ".....-.-...-..---";
+		String decrypt = morseCode.decrypt(text);
+		System.out.println(text + " -> " + decrypt);*/
 
-		String decrypt = morseCode.decrypt(".....-.-...-..---");
-		System.out.println(decrypt);
+		System.out.print("Read custom text: ");
+		System.out
+				.println(morseCode.encrypt(new In().readLine().toUpperCase()));
 	}
 }

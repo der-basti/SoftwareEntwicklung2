@@ -38,10 +38,35 @@ class MorseCode {
 
 		for (int i = 0; i < input.length; i++) {
 			tmp = input[i].split(String.valueOf(this.splitter));
-			this.mapping.put(tmp[0], tmp[1]);
+			if (!specialChar(tmp[0], tmp[1])) {
+				this.mapping.put(tmp[0], tmp[1]);
+			}
 		}
 
 		remapping();
+	}
+
+	private boolean specialChar(String str, String code) {
+
+		if (str.equals("Period") || str.equals(".")) {
+			this.mapping.put("Perios", code);
+			this.mapping.put(".", code);
+			return true;
+		} else if (str.equals("Comma") || str.equals(",")) {
+			this.mapping.put("Comma", code);
+			this.mapping.put(",", code);
+			return true;
+		} else if (str.equals("Space") || str.equals(" ")) {
+			this.mapping.put("Space", code);
+			this.mapping.put(" ", code);
+			return true;
+		} else if (str.equals("End")) {
+			this.mapping.put("End", code);
+			this.mapping.put(System.getProperty("line.separator"), code);
+			return true;
+		}
+		return false;
+
 	}
 
 	/**
@@ -54,24 +79,33 @@ class MorseCode {
 		}
 	}
 
+	/**
+	 * Text 2 morse.
+	 * 
+	 * @param morse
+	 *            code
+	 * @return text
+	 */
 	public String encrypt(String text) {
-
-		return foo(this.mapping, text);
-	}
-
-	public String decrypt(String text) {
-
-		return foo(this.remapping, text);
-	}
-
-	private final String foo(Map<String, String> x_mapping, String text) {
 
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < text.length(); i++) {
-			sb.append(x_mapping.get(text.charAt(i)));
+			sb.append(this.mapping.get(String.valueOf(text.charAt(i))));
 		}
 		return sb.toString();
 	}
+
+	/*
+	 * Morse 2 text.
+	 * 
+	 * @param text
+	 * @return morse code
+	 */
+	/*
+	 * public String decrypt(String text) {
+	 * 
+	 * // XXX [sne] implement }
+	 */
 
 	public char getSplitter() {
 		return this.splitter;
