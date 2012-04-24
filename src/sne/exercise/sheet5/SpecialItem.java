@@ -15,6 +15,19 @@ class SpecialItem extends Product {
 		}
 	}
 
+	public SpecialItem(Product product) {
+
+		this(product.getProductId(), product.getDescription(), product
+				.getCost(), product.getStorageTime());
+	}
+
+	public static SpecialItem getSpecialItem(Product product) {
+
+		return new SpecialItem(product.getProductId(),
+				product.getDescription(), product.getCost(),
+				product.getStorageTime());
+	}
+
 	public SpecialItem(String productId, String description, double cost,
 			int storageTime, double discount) {
 		super(productId, description, cost, storageTime);
