@@ -1,6 +1,6 @@
 package sne.exercise.sheet6;
 
-public enum Attitude {
+enum Attitude {
 
 	FLAT("Wohnung"), APPROPRIATE("Artgerecht");
 	

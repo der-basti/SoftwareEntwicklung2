@@ -1,6 +1,6 @@
 package sne.exercise.sheet6;
 
-public enum Category {
+enum Category {
 
 	SMALL_DOG("Kleiner Hund"), MIDDLE_DOG("Mittelgroßer Hund"), BIG_DOG("Großer Hund");
 

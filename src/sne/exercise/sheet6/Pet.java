@@ -73,7 +73,7 @@ abstract class Pet implements Comparable<Pet> {
 
 	public abstract void eat();
 
-	protected String getName() {
+	public String getName() {
 		return this.name;
 	}
 
@@ -81,7 +81,7 @@ abstract class Pet implements Comparable<Pet> {
 		this.name = name;
 	}
 
-	protected double getFoodStorage() {
+	public double getFoodStorage() {
 		return this.foodStorage;
 	}
 
@@ -89,7 +89,7 @@ abstract class Pet implements Comparable<Pet> {
 		this.foodStorage = foodStorage;
 	}
 
-	protected int getDayCount() {
+	public int getDayCount() {
 		return this.dayCount;
 	}
 
