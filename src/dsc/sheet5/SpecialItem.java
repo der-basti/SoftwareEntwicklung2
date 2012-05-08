@@ -30,9 +30,19 @@ public class SpecialItem extends Product {
 		sb.append(" ").append('"').append(this.productName).append("\" ");
 		sb.append("EK: ").append(this.cost).append(" Euro ");
 		sb.append("VK: ").append(calculatePrice()).append(" Euro ");
-		sb.append("Storage Time: ").append(this.storageTime).append(" months ");
+		sb.append("Stored: ").append(this.storageTime).append(" months ");
 		sb.append("VK <old>: ").append(super.calculatePrice()).append(" Euro; ");
 		sb.append("Discount: ").append(this.discount * 100).append(" % ");
 		return sb.toString();
 	}
+	
+	public double getDiscount() {
+		return this.discount;
+	}
+
+	public void setDiscount(double discount) {
+		this.discount = discount;
+	}
+	
+
 }

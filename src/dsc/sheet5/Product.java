@@ -29,7 +29,7 @@ public class Product {
 		sb.append(" ").append('"').append(this.productName).append("\" ");
 		sb.append("EK: ").append(this.cost).append(" Euro ");
 		sb.append("VK: ").append(calculatePrice()).append(" Euro ");
-		sb.append("Storage Time: ").append(this.storageTime).append(" months");
+		sb.append("Stored: ").append(this.storageTime).append(" months");
 		return sb.toString();
 	}
 
