@@ -1,10 +1,5 @@
 package sne.exercise.sheet6;
 
-/**
- * 
- * @author sne
- * 
- */
 class Cat extends Pet {
 
 	private double consumption = 0.5;
@@ -31,12 +26,18 @@ class Cat extends Pet {
 
 	@Override
 	public void display() {
-		super.display();
-		StringBuilder sb = new StringBuilder();
-		sb.append("\"").append(getName());
+		System.out.println(this.toString());
+	}
+
+	@Override
+	public String toString() {
+
+		StringBuilder sb = new StringBuilder(super.toString());
+		sb.append(System.getProperty("line.separator")).append("\"")
+				.append(getName());
 		sb.append("\" ist eine ").append(this.attitude.getDisplay());
 		sb.append(" Katze.");
-		System.out.println(sb.toString());
+		return sb.toString();
 	}
 
 	public Attitude getAttitude() {
