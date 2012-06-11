@@ -1,10 +1,5 @@
 package sne.exercise.sheet6;
 
-/**
- * 
- * @author sne
- * 
- */
 abstract class Pet implements Comparable<Pet> {
 
 	private String name;
@@ -29,7 +24,7 @@ abstract class Pet implements Comparable<Pet> {
 	public void feed() {
 		this.speak();
 		this.dayCount = 0;
-		// XXX [sne] check consumption
+		// FIXME [sne] check consumption
 		while (this.foodStorage > 0) {
 			this.dayCount++;
 			this.eat();
@@ -38,12 +33,8 @@ abstract class Pet implements Comparable<Pet> {
 	}
 
 	public void display() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("\"").append(getName());
-		sb.append("\" Gewicht: ").append(round(getWeight()));
-		sb.append(" Futtervorrat: ").append(round(getFoodStorage()));
-		sb.append(" reichte ").append(this.dayCount).append(" Tage");
-		System.out.println(sb.toString());
+		
+		System.out.println(this.toString());
 	}
 
 	protected double round(double value) {
@@ -59,7 +50,7 @@ abstract class Pet implements Comparable<Pet> {
 	protected double consumption(double consumptionValue) {
 		return this.foodStorage -= consumptionValue;
 	}
-	
+
 	@Override
 	public int compareTo(Pet pet) {
 		if (this.weight < pet.getWeight())
@@ -67,6 +58,17 @@ abstract class Pet implements Comparable<Pet> {
 		else if (this.weight > pet.getWeight())
 			return 1;
 		return 0;
+	}
+	
+	@Override
+	public String toString() {
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append("\"").append(getName());
+		sb.append("\" Gewicht: ").append(round(getWeight()));
+		sb.append(" Futtervorrat: ").append(round(getFoodStorage()));
+		sb.append(" reichte ").append(this.dayCount).append(" Tage");
+		return sb.toString();
 	}
 
 	public abstract void speak();

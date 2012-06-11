@@ -1,10 +1,5 @@
 package sne.exercise.sheet6;
 
-/**
- * 
- * @author sne
- * 
- */
 class Dog extends Pet {
 
 	private double consumption;
@@ -38,18 +33,24 @@ class Dog extends Pet {
 		setFoodStorage(consumption(this.consumption));
 
 		StringBuilder sb = new StringBuilder();
-		sb.append(getName()).append(": ")
-				.append(round(getFoodStorage()));
+		sb.append(getName()).append(": ").append(round(getFoodStorage()));
 		System.out.println(sb.toString());
 	}
 
 	@Override
 	public void display() {
-		super.display();
-		StringBuilder sb = new StringBuilder();
-		sb.append("\"").append(getName());
+
+		System.out.println(this.toString());
+	}
+
+	@Override
+	public String toString() {
+
+		StringBuilder sb = new StringBuilder(super.toString());
+		sb.append(System.getProperty("line.separator")).append("\"")
+				.append(getName());
 		sb.append("\" ist ein ").append(this.category.getDisplay());
-		System.out.println(sb.toString());
+		return sb.toString();
 	}
 
 	public Category getCategory() {

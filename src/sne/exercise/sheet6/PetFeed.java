@@ -115,13 +115,13 @@ class PetFeed {
 			}
 		}
 
-		System.out.println("== unsortiert");
+		System.out.println("== unsorted");
 		for (int i = 0; i < 5; i++)
 			pets[i].display();
 
 		Arrays.sort(pets);
 
-		System.out.println("== sortiert");
+		System.out.println("== sorted");
 		for (int i = 0; i < 5; i++)
 			pets[i].display();
 	}
