@@ -79,13 +79,12 @@ class Queue<T extends Comparable<? super T>> {
 
 		Node tmp;
 		T max = firstNode.item;
-		NumberComparator nc = new NumberComparator();
 		while ((tmp = firstNode.next) != null) {
 			// first init
 			if (max == null)
 				max = tmp.item;
 			// compare
-			if (nc.compare((Number) tmp.item, (Number) max) > 0)
+			if (tmp.item.compareTo(max) > 0)
 				max = tmp.item;
 			// next node
 			firstNode = firstNode.next;
@@ -97,7 +96,7 @@ class Queue<T extends Comparable<? super T>> {
 
 		if (isEmpty())
 			return null;
-		
+
 		return maxRecursionCore(this.first, this.first.item);
 	}
 
@@ -106,9 +105,10 @@ class Queue<T extends Comparable<? super T>> {
 		if (node == null)
 			return max;
 
-		if (new NumberComparator().compare((Number) node.item, (Number) max) > 0) {
+		if (node.item.compareTo(max) > 0) {
 			max = node.item;
 		}
+
 		return maxRecursionCore(node.next, max);
 	}
 }
