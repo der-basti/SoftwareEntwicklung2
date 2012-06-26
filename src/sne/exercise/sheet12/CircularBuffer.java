@@ -3,7 +3,7 @@ package sne.exercise.sheet12;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-
+// FIXME [sne] implementation
 public class CircularBuffer<T> {
 
 	private final int maxSize;
